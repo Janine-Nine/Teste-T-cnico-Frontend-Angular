@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard de Usuários | Sistema Profissional</title>
+  <meta name="description" content="Gerencie usuários com uma interface limpa, moderna e funcional.">
+  <meta name="keywords" content="dashboard, usuários, cadastro, frontend, web app">
+  <meta name="author" content="Janine Dev">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="progress-bar"></div>
+
+  <div id="app-loading">
+    <div class="spinner"></div>
+    <p>Carregando sistema...</p>
+  </div>
+
+  <header class="header">
+    <div class="container header-inner">
+      <div>
+        <p class="eyebrow">Sistema Profissional</p>
+        <h1>Dashboard de Usuários</h1>
+        <p class="hero-text">Gerencie contatos, cadastre novos perfis e mantenha sua base de usuários organizada com facilidade.</p>
+      </div>
+      <button id="btnNovo" class="btn primary">Novo usuário</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="toolbar">
+      <input id="search" type="search" placeholder="Buscar por nome, email, CPF ou telefone" autocomplete="off">
+    </section>
+
+    <section class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>CPF</th>
+            <th>Telefone</th>
+            <th>Tipo</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="userTableBody"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header">
+        <div>
+          <p class="eyebrow">Formulário</p>
+          <h2 id="modalTitle">Cadastro de usuário</h2>
+        </div>
+        <button id="btnCloseModal" class="icon-btn close-btn" aria-label="Fechar modal">×</button>
+      </div>
+
+      <form id="userForm" class="form-grid" autocomplete="off">
+        <input type="hidden" id="userId">
+
+        <label>
+          <span>Nome</span>
+          <input id="nome" type="text" required placeholder="Nome completo">
+        </label>
+
+        <label>
+          <span>Email</span>
+          <input id="email" type="email" required placeholder="usuario@exemplo.com">
+        </label>
+
+        <label>
+          <span>CPF</span>
+          <input id="cpf" type="text" required placeholder="12345678901" pattern="\d{11}">
+        </label>
+
+        <label>
+          <span>Telefone</span>
+          <input id="telefone" type="tel" required placeholder="(11) 99999-9999">
+        </label>
+
+        <label>
+          <span>Tipo de telefone</span>
+          <select id="tipoTelefone" required>
+            <option value="">Selecione</option>
+            <option value="Celular">Celular</option>
+            <option value="Residencial">Residencial</option>
+            <option value="Comercial">Comercial</option>
+          </select>
+        </label>
+
+        <div class="form-actions">
+          <button type="button" class="btn secondary" id="btnCancel">Cancelar</button>
+          <button type="submit" class="btn primary">Salvar usuário</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <noscript>
+    <div class="no-js-warning">
+      <p>Este site precisa de JavaScript para funcionar corretamente.</p>
+    </div>
+  </noscript>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Teste Frontend-Angular desenvolvido por Janine Cunha - Desenvolvedora Full-Stack</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

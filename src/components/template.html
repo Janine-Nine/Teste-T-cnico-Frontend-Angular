@@ -1,0 +1,9 @@
+<input [formControl]="searchControl" placeholder="Buscar..." />
+
+<div *ngIf="loading()">Carregando...</div>
+
+<ul>
+  <li *ngFor="let user of usuarios$ | async">
+    {{ user.nome }}
+  </li>
+</ul>

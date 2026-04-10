@@ -1,0 +1,32 @@
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* placeholder borrado */
+.placeholder {
+  width: 100%;
+  filter: blur(20px);
+  transform: scale(1.1);
+  transition: opacity 0.4s ease;
+}
+
+/* imagem real */
+.main-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* quando carregar */
+.main-image.visible {
+  opacity: 1;
+}
+
+.placeholder.hidden {
+  opacity: 0;
+}

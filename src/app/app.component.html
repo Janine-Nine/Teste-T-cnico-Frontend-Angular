@@ -1,0 +1,24 @@
+<mat-sidenav-container class="container">
+
+  <mat-sidenav mode="side" opened>
+    <h2 class="logo">⚡Janine Dev</h2>
+    <button mat-button routerLink="/">Usuários</button>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <mat-toolbar color="primary">
+      <span>Dashboard</span>
+    </mat-toolbar>
+
+    <div class="content">
+      <router-outlet />
+    </div>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+<!-- GLOBAL -->
+<app-toast></app-toast>
+<app-loading-bar></app-loading-bar>
