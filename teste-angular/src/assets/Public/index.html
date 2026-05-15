@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard de Usuários | Teste Angular</title>
+  <meta name="description" content="Template estático inspirado no projeto Teste Angular, com painel de usuários, cadastro e relatórios.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="progress-bar"></div>
+
+  <div id="app-loading">
+    <div class="spinner"></div>
+    <p>Carregando painel de usuários...</p>
+  </div>
+
+  <header class="header">
+    <div class="container header-inner">
+      <div>
+        <p class="eyebrow">Teste Angular</p>
+        <h1>Dashboard de Usuários</h1>
+        <p class="hero-text">Painel de gerenciamento com cadastro, edição e exclusão de usuários em interface sóbria e moderna.</p>
+      </div>
+      <button class="btn primary">Novo usuário</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="toolbar">
+      <input id="search" type="search" placeholder="Buscar nome, email, CPF ou telefone">
+    </section>
+
+    <section class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>CPF</th>
+            <th>Telefone</th>
+            <th>Tipo</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>João Silva</td>
+            <td>joao@email.com</td>
+            <td>12345678901</td>
+            <td>(11) 99999-0001</td>
+            <td>Celular</td>
+            <td>
+              <div class="action-group">
+                <button class="btn secondary">Editar</button>
+                <button class="btn danger">Excluir</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Maria Souza</td>
+            <td>maria@email.com</td>
+            <td>23456789012</td>
+            <td>(21) 98888-0002</td>
+            <td>Residencial</td>
+            <td>
+              <div class="action-group">
+                <button class="btn secondary">Editar</button>
+                <button class="btn danger">Excluir</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Carlos Lima</td>
+            <td>carlos@email.com</td>
+            <td>34567890123</td>
+            <td>(31) 97777-0003</td>
+            <td>Comercial</td>
+            <td>
+              <div class="action-group">
+                <button class="btn secondary">Editar</button>
+                <button class="btn danger">Excluir</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header">
+        <div>
+          <p class="eyebrow">Formulário</p>
+          <h2 id="modalTitle">Cadastro de usuário</h2>
+        </div>
+        <button class="icon-btn close-btn" aria-label="Fechar modal">×</button>
+      </div>
+
+      <form class="form-grid" autocomplete="off">
+        <label>
+          <span>Nome</span>
+          <input type="text" placeholder="Nome completo">
+        </label>
+
+        <label>
+          <span>Email</span>
+          <input type="email" placeholder="usuario@exemplo.com">
+        </label>
+
+        <label>
+          <span>CPF</span>
+          <input type="text" placeholder="12345678901">
+        </label>
+
+        <label>
+          <span>Telefone</span>
+          <input type="tel" placeholder="(11) 99999-9999">
+        </label>
+
+        <label>
+          <span>Tipo de telefone</span>
+          <select>
+            <option value="">Selecione</option>
+            <option value="Celular">Celular</option>
+            <option value="Residencial">Residencial</option>
+            <option value="Comercial">Comercial</option>
+          </select>
+        </label>
+
+        <div class="form-actions">
+          <button type="button" class="btn secondary">Cancelar</button>
+          <button type="submit" class="btn primary">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <noscript>
+    <div class="no-js-warning">
+      <p>Este site precisa de JavaScript para funcionar corretamente.</p>
+    </div>
+  </noscript>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Teste Frontend-Angulardesenvolvido por Janine Cunha - Desenvolvedora Full-Stack</p>
+  </footer>
+</body>
+</html>

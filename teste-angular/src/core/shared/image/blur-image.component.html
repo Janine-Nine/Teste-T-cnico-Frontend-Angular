@@ -1,0 +1,22 @@
+<div class="image-wrapper">
+
+  <!-- 🔥 PLACEHOLDER (blur) -->
+  <img
+    [src]="placeholder"
+    class="placeholder"
+    [class.hidden]="loaded()"
+  />
+
+  <!-- 🖼 IMAGEM REAL -->
+  <img
+    [src]="src"
+    class="main-image"
+    (load)="onLoad()"
+    [class.visible]="loaded()"
+  />
+
+  <app-blur-image
+  src="https://picsum.photos/400/300"
+  placeholder="https://picsum.photos/40/30"
+></app-blur-image>
+</div>

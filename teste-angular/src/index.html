@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TesteAngular</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <mat-form-field appearance="outline" class="full-width">
+  <mat-label>CPF</mat-label>
+  <input matInput formControlName="cpf" placeholder="000.000.000-00" />
+
+  <mat-error *ngIf="f.cpf.touched && f.cpf.errors?.['required']">
+    CPF é obrigatório
+  </mat-error>
+
+  <mat-error *ngIf="f.cpf.touched && f.cpf.errors?.['cpfInvalido']">
+    CPF inválido
+  </mat-error>
+</mat-form-field>
+<input
+  matInput
+  formControlName="cpf"
+  (input)="form.patchValue({ cpf: formatarCpf($event.target.value) })"
+/>
+<mat-form-field appearance="outline" class="full-width">
+  <mat-label>Telefone</mat-label>
+  <input matInput formControlName="telefone" placeholder="(51) 99999-9999" />
+
+  <mat-error *ngIf="f.telefone.touched && f.telefone.errors?.['required']">
+    Telefone é obrigatório
+  </mat-error>
+
+  <mat-error *ngIf="f.telefone.touched && f.telefone.errors?.['telefoneInvalido']">
+    Telefone inválido
+  </mat-error>
+</mat-form-field>
+<input
+  matInput
+  formControlName="telefone"
+  (input)="form.patchValue({ telefone: formatarTelefone($event.target.value) })"
+/>
+<input
+  matInput
+  formControlName="telefone"
+  appTelefoneMask
+  placeholder="(51) 99999-9999"
+/>
+  <app-root></app-root>
+</body>
+</html>
