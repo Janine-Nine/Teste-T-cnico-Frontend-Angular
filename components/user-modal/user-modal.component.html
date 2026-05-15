@@ -1,0 +1,57 @@
+<h2 mat-dialog-title>
+  {{ data?.id ? 'Editar Usuário' : 'Novo Usuário' }}
+</h2>
+
+<mat-dialog-content>
+
+  <!-- 🔥 SKELETON DENTRO DO MODAL -->
+  <app-skeleton *ngIf="loading()" type="text" [count]="4"></app-skeleton>
+
+  <!-- FORM -->
+  <form *ngIf="!loading()" [formGroup]="form" class="form">
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="nome" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>CPF</mat-label>
+      <input matInput formControlName="cpf" />
+    </mat-form-field>
+
+    <div class="row">
+
+      <mat-form-field appearance="outline" class="flex">
+        <mat-label>Telefone</mat-label>
+        <input matInput formControlName="telefone" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="flex">
+        <mat-label>Tipo</mat-label>
+        <mat-select formControlName="tipoTelefone">
+          <mat-option value="celular">Celular</mat-option>
+          <mat-option value="residencial">Residencial</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </div>
+
+  </form>
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+
+  <button mat-button mat-dialog-close>Cancelar</button>
+
+  <button mat-flat-button color="primary" [disabled]="form.invalid">
+    Salvar
+  </button>
+
+</mat-dialog-actions>
