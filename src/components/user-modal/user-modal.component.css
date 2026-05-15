@@ -1,0 +1,28 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 400px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+}
+
+.flex {
+  flex: 1;
+}
+
+form {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}

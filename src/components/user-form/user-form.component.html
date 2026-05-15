@@ -1,0 +1,73 @@
+<h2 mat-dialog-title>Cadastro de Usuário</h2>
+
+<mat-dialog-content>
+
+  <form [formGroup]="form">
+
+    <mat-form-field appearance="outline" style="width: 100%">
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="nome">
+      <mat-error>Nome obrigatório</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" style="width: 100%">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email">
+      <mat-error>Email inválido</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" style="width: 100%">
+      <mat-label>CPF</mat-label>
+      <input matInput formControlName="cpf" placeholder="Apenas números">
+      <mat-error *ngIf="form.controls['cpf'].hasError('required')">
+        CPF obrigatório
+      </mat-error>
+      <mat-error *ngIf="form.controls['cpf'].hasError('pattern')">
+        CPF deve conter 11 dígitos numéricos
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" style="width: 100%">
+      <mat-label>Telefone</mat-label>
+      <input matInput formControlName="telefone" placeholder="(11) 99999-9999">
+      <mat-error *ngIf="form.controls['telefone'].hasError('required')">
+        Telefone obrigatório
+      </mat-error>
+      <mat-error *ngIf="form.controls['telefone'].hasError('pattern')">
+        Telefone inválido
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" style="width: 100%">
+      <mat-label>Tipo Telefone</mat-label>
+
+      <mat-select formControlName="tipoTelefone">
+
+        <mat-option value="Celular">Celular</mat-option>
+        <mat-option value="Residencial">Residencial</mat-option>
+        <mat-option value="Comercial">Comercial</mat-option>
+
+      </mat-select>
+
+    </mat-form-field>
+
+  </form>
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+
+  <button mat-button (click)="dialogRef.close()">
+    Cancelar
+  </button>
+
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="save()"
+    [disabled]="form.invalid">
+
+    Salvar
+  </button>
+
+</mat-dialog-actions>
