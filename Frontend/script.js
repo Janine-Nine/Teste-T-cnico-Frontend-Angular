@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const STORAGE_KEY = 'frontend_users_storage';
 const defaultUsers = [
   {
@@ -528,4 +527,4 @@ function showToast(message, type = 'info') {
   setTimeout(() => toast.classList.add('fade-out'), 2400);
   setTimeout(() => toast.remove(), 3000);
 }
->>>>>>> 88f9859c97846e642ff41479f47e656cc6528e45
+
